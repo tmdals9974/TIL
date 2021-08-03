@@ -1,0 +1,24 @@
+{
+  "name": "TIL",
+  "version": "1.0.0",
+  "description": "Today I Learned",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmdals9974/TIL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmdals9974/TIL/issues"
+  },
+  "homepage": "https://github.com/tmdals9974/TIL#readme",
+  "devDependencies": {
+    "vuepress": "^1.8.2"
+  }
+}
