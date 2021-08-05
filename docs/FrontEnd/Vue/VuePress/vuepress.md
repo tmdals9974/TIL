@@ -1,0 +1,173 @@
+# VuePress로 기본 프로젝트 만들기
+
+## VuePress란 ?
+
+[VuePress](https://vuepress.vuejs.org/)는 Vue.js로 개발된 정적 사이트 생성기(static site generator)입니다.  
+[해당 링크](https://jamstack.org/generators/)에서 SSG 목록을 확인할 수 있습니다.
+
+VuePress를 이용하면 기본 테마를 제공해주기에 최소한의 설정만으로도 간단하게 사이트를 생성할 수 있습니다.
+
+또한, 다양한 플러그인과 테마를 제작/적용 사용하여 편리하게 자신만의 사이트를 만들 수도 있습니다.
+
+## VuePress를 선택한 이유
+
+최근에 잔디관리를 시작했는데, 아직 궁금한 것도 모르는 것도 많은 주니어 개발자라 개인 개발 시간보다는 개인 학습 시간이 더욱 많았습니다.
+
+개인 학습때에는 메모장에 내용을 정리하다보니 잔디가 듬성듬성 자라있고, 아무리 폴더 구분을 해두었다지만 나중에 찾아보기 불편하다보니
+
+'학습 내용으로 깃 관리와 블로그 관리를 동시에 할 수 없을까?'
+
+라는 생각을 가지게 되었고, 찾아보니 이미 많은 분들이 VuePress를 이용해 관리하고 계셨습니다.  
+ (http://milooy.github.io/TIL/ , https://junilhwang.github.io/TIL/)
+
+가이드를 따라 VuePress로 프로젝트를 만들고나면 .md 파일을 작성하여 푸쉬하는 것만으로도 모든것이 자동으로 이루어지게 될 겁니다.
+
+우측 상단 검색을 통해 빠르게 문서를 이동하는 것, 좌측 사이드바에 그룹별로 묶여 보여지는 것, 서버에 자동배포하는 것 등 모든 일이요 !
+
+## VuePress 시작
+
+필자는 node.js 14.15.5버전, vuepress 1.8.2 버전을 이용했으며,  
+Node.js의 기본 지식을 가지고 있다는 전제 하에 글을 작성했습니다.
+
+1. 프로젝트 폴더를 만든 후 해당 경로에서 터미널에 다음 명령어를 입력합니다.
+
+```bash
+npm init -y
+```
+
+2. VuePress를 설치합니다.
+
+```bash
+npm i -D vuepress
+```
+
+3. docs 폴더를 생성하고 README.md 파일을 작성합니다.  
+   파일 탐색기를 이용해도 되고, 다음 명령어를 입력하셔도 됩니다.
+
+```bash
+mkdir docs
+echo '# Hello VuePress' > docs/README.md
+```
+
+4. package.json scripts에 추가합니다.
+
+```javascript
+"dev": "vuepress dev docs",
+"build": "vuepress build docs"
+```
+
+5. 터미널에 다음 명령어를 입력합니다.  
+   정상적으로 작동했을 경우, http://localhost:8080 으로 로컬 서버가 실행되며 핫로드가 지원됩니다. (단, config.js 등 일부 파일 수정 시에는 서버를 재시작해야합니다.)
+
+```bash
+npm run dev
+```
+
+이후 http://localhost:8080 에 접속해보시면 docs/README.md에 작성한 내용이 표시되는 걸 확인하실 수 있습니다.
+
+화면이 너무 많이 비어있네요. 조금 더 추가해봅시다.
+
+6. docs/README.md 파일을 다음과 같이 수정합니다.  
+   수정 후 저장을 하시면 핫-리로드가 지원되어 바로 반영되는걸 확인하실 수 있습니다.
+
+```md
+# Hello VuePress
+
+index 페이지입니다.
+
+## VuePress 개념
+
+다음은 VuePress 개념 설명입니다.
+
+## VuePress 시작
+
+다음은 VuePress 시작입니다.
+
+## VuePress 설정
+
+다음은 VuePress 설정입니다.
+```
+
+7. docs 폴더 하위에 .vuepress 폴더를 생성해주고,  
+   .vuepress 폴더에 config.js를 생성해줍니다.  
+   config.js는 vuepress의 주 설정 파일입니다.  
+   현재 폴더 구조는 다음과 같습니다.
+
+```
+. (root)
+  ├─ node_modules
+  ├─ docs
+    ├─ .vuepress
+      └── config.js
+    └── README.md
+  └─ package.json
+```
+
+8. config.js 파일 내용을 다음과 같이 수정합니다.
+
+```javascript
+module.exports = {
+	title: 'TIL', //페이지 좌측 상단 타이틀 텍스트 설정
+	description: 'Today I Learned', //페이지 설명
+	base: '/TIL/', // /TIL/로 설정 시 페이지 링크는 http://localhost:8080/TIL/ 로 설정됨.
+	themeConfig: {
+		nav: [{ text: 'Home', link: '/' }], //우측 상단 navbar 메뉴 추가
+		sidebar: 'auto' // 좌측 sidebar 메뉴 auto 설정
+	}
+};
+```
+
+수정 후 저장을 누르셔도 이번엔 화면이 변하지 않을겁니다.
+
+처음에도 말씀드렸다시피, config.js와 같은 파일 변경시에는 서버를 재시작해야하기 때문입니다.  
+터미널에서 구동 중인 서버를 종료한 뒤, 다시 한번
+
+```bash
+npm run dev
+```
+
+를 이용해 실행시켜서 화면을 확인해보세요.
+
+<img src="http://localhost:8080/TIL/vuepress-01.jpg" style="border: solid 1px #e0e0e0;">
+
+다음과 같이 나왔다면 기본 설정 성공입니다!
+
+## VuePress - config.js 추가 설정
+
+config.js에 추가하면 좋은 설정값들을 설명드리겠습니다.
+
+```javascript
+module.exports = {
+	title: 'TIL',
+	description: 'Today I Learned',
+	base: '/TIL/',
+	head: [['link', { rel: 'icon', href: '/logo.ico' }]],
+	//.vuepress/public 폴더에 logo.ico 파일을 넣으면 해당 파일로 파비콘이 설정됩니다.
+	//.vuepress/public 폴더는 정적 파일들을 보관합니다.
+	// https://vuepress.vuejs.org/guide/assets.html#public-files
+	themeConfig: {
+		logo: '/logo.png',
+		// .vuepress/public/logo.png 파일로 좌측상단 로고 이미지가 설정됩니다.
+		nav: [
+			{ text: 'Home', link: '/' },
+			{ text: 'GitHub', link: 'https://github.com/tmdals9974/' }
+			//자신의 github 주소나 블로그 주소를 추가할 수 있습니다.
+		],
+		smoothScroll: true,
+		//smoothScroll이 작동됩니다.
+		lastUpdated: true,
+		//마지막 깃 커밋 기준으로 페이지 하단에 마지막 업데이트날이 표기됩니다.
+		sidebar: 'auto'
+		//sidebarDepth : 2
+		//좌측 사이드바를 살펴보시면 README.md의 ## 까지만 인식하여 소메뉴로 분류해주었는데,
+		//sidebarDepth의 기본값 1이 적용되서 그렇습니다.
+		//sidebarDepth를 2로 적용하면 ### 까지 소메뉴로 인식하여 추가해줍니다.
+	}
+};
+```
+
+이 외에 다른 설정값들은 [이 곳](https://vuepress.vuejs.org/theme/default-theme-config.html#homepage)에서 확인하실 수 있습니다.
+
+다음 글에서 더 자세한 내용을 다루겠습니다.
+
+감사합니다.
