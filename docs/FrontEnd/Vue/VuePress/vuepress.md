@@ -20,6 +20,8 @@ VuePress를 이용하면 기본 테마를 제공해주기에 최소한의 설정
 라는 생각을 가지게 되었고, 찾아보니 이미 많은 분들이 VuePress를 이용해 관리하고 계셨습니다.  
  (http://milooy.github.io/TIL/ , https://junilhwang.github.io/TIL/)
 
+VuePress는 .md파일로 글을 작성할 수 있으며, .md 파일은 편집기에서도 미리보기가 지원되고, github 등 여러 사이트에서도 볼 수 있게 지원된다는 장점이 있습니다.
+
 가이드를 따라 VuePress로 프로젝트를 만들고나면 .md 파일을 작성하여 푸쉬하는 것만으로도 모든것이 자동으로 이루어지게 될 겁니다.
 
 우측 상단 검색을 통해 빠르게 문서를 이동하는 것, 좌측 사이드바에 그룹별로 묶여 보여지는 것, 서버에 자동배포하는 것 등 모든 일이요 !
@@ -97,9 +99,9 @@ index 페이지입니다.
 . (root)
   ├─ node_modules
   ├─ docs
-    ├─ .vuepress
-      └── config.js
-    └── README.md
+  │ ├─ .vuepress
+  │ │ └─ config.js
+  │ └─ README.md
   └─ package.json
 ```
 
@@ -168,6 +170,9 @@ module.exports = {
 
 이 외에 다른 설정값들은 [이 곳](https://vuepress.vuejs.org/theme/default-theme-config.html#homepage)에서 확인하실 수 있습니다.
 
-다음 글에서 더 자세한 내용을 다루겠습니다.
+
+## 다음 글 예고
+
+다음 글에서는 sidebar 및 navbar 설정법을 더 자세하게 다루어보도록 하겠습니다.
 
 감사합니다.

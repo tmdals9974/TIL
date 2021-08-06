@@ -1,0 +1,241 @@
+# VuePress로 만든 기본 프로젝트 꾸미기
+
+안녕하세요.  
+ 이전 글에서 VuePress로 기본 프로젝트를 생성하는 법을 다루었습니다.  
+ 이번 글에서는 생성한 기본 프로젝트를 좀 더 다채롭게 구성하는 법을 알려드리겠습니다.
+
+## 사이드바 메뉴 단일 그룹으로 구성하기
+
+.vuepress/config.js 에서 sidebar의 값을 수정하면 간단하게 사이드바를 단일 그룹으로 구성할 수 있습니다.
+
+우선 따라해보시죠!
+
+1. docs 폴더 내에 원하는 폴더를 생성합니다.  
+   저는 Diary 폴더를 만들겠습니다.
+
+2. 생성한 폴더 내에 .md파일을 작성합니다.  
+   저는 다음과 같이 두개의 파일을 작성했습니다.
+
+```md
+# 2021년 8월 5일
+
+## 날씨
+
+덥고 습함
+
+## 방문장소
+
+회사, 집
+
+## 특이사항
+
+없음
+
+## 기타
+
+저소음 황축 키보드를 주문했으나 일반 황축이 배송되어 우울했다.
+```
+
+```md
+# 2021년 8월 6일
+
+## 날씨
+
+적당히 더움
+
+## 방문장소
+
+회사, 집
+
+## 특이사항
+
+없음
+
+## 기타
+
+오배송 문의하여 저소음 황축으로 교환받을 수 있을 줄 알았으나, 품절이여서 환불처리됐다.
+오늘도 우울하다.
+최저가였는데...
+```
+
+3. config.js의 sidebar를 다음과 같이 수정합니다.
+
+```javascript
+sidebar: [
+	{
+		title: '일기',
+		children: ['Diary/20210805', 'Diary/20210806']
+	}
+];
+```
+
+config.js를 수정했으니, 다시 서버를 재구동하여 실행화면을 확인해봅시다!
+
+<img src="http://localhost:8080/TIL/vuepress-02.jpg" style="border: solid 1px #e0e0e0;">
+
+다음과 같이 이쁘게 나오네요!  
+화면을 보며, config.js의 설정법을 설명 드리겠습니다!
+
+```javascript
+sidebar: [
+	{
+		title: '일기', //그룹명을 설정합니다. 기존 폴더명과는 관계 없습니다.
+
+		//path: "/Diary/", //만약 Diary/README.md가 존재한다면, "일기" 그룹을 클릭 시 해당 페이지를 보여줍니다.
+		//큰 필요성을 느끼지 못해 예제엔 사용하지 않았지만 Diary/README.md 생성 후 path:"/Diary/"를 입력해서 사용해보시면 바로 알 수 있습니다!
+
+		children: ['Diary/20210805', 'Diary/20210806'] //그룹명 하위 아이템을 선언합니다.
+		//.md는 생략하며, docs 이후부터의 파일 경로를 입력해주면 됩니다.
+
+		//sidebarDepth는 기본값 1로 설정되어, 사이드바에 ## 까지만 표시됩니다. 물론 원하는대로 설정 가능합니다.
+	}
+];
+```
+
+4. 만약 더 많은 단일 그룹들을 추가하고 싶다면 다음과 같이 설정하시면 가능합니다.
+
+```javascript
+sidebar: [
+	{
+		title: '일기',
+		children: ['Diary/20210805', 'Diary/20210806']
+	},
+	{
+		title: '메모',
+		children: ['Memo/20210805', 'Memo/20210806']
+	},
+	{
+		title: '공부',
+		children: ['Study/20210805', 'Study/20210806']
+	}
+];
+```
+
+결과물입니다.
+
+<img src="http://localhost:8080/TIL/vuepress-03.jpg" style="border: solid 1px #e0e0e0;">
+
+## 사이드바 중첩 그룹으로 구성하기
+
+사이드바를 중첩 그룹으로 만드는 방법을 설명 드리겠습니다.  
+[공식 문서 링크](https://vuepress.vuejs.org/theme/default-theme-config.html#sidebar-groups)입니다.
+
+1. 폴더 구조를 중첩하여 생성해줍니다.  
+   다음은 제 폴더 구조입니다.
+
+```
+. (root)
+  ├─ node_modules
+  ├─ docs
+  │ ├─ .vuepress
+  │ └─ Diary
+  │     ├─ Memo
+  │     └─ Study
+  └─ package.json
+```
+
+2. config.js에서 sidebar를 수정해줍니다.
+
+```javascript
+sidebar: [
+	{
+		title: '일기',
+		children: [
+			'Diary/20210805',
+			'Diary/20210806',
+			{
+				title: '메모',
+				children: ['Diary/Memo/20210805', 'Diary/Memo/20210806']
+			},
+			{
+				title: '공부',
+				children: ['Diary/Study/20210805', 'Diary/Study/20210806']
+			}
+		]
+	}
+];
+```
+
+다음은 실행 결과 입니다.
+<img src="http://localhost:8080/TIL/vuepress-04.jpg" style="border: solid 1px #e0e0e0;">
+
+원하던 대로 일기 그룹 하위에 중첩된 그룹이 생성되었습니다.
+
+## navbar에 페이지 추가하기
+
+다음은 navbar에 페이지를 추가하는 법에 대해 알아보겠습니다!
+
+상당히 복잡하니 집중해주세요!
+
+1. 저를 소개하는 페이지를 만들겠습니다.  
+   docs 폴더 밑에 about 이라는 폴더를 만들어주시고, about/README.md를 작성해주세요.
+
+```md
+# 나에대해서
+
+안녕하세요. 이승민입니다
+
+## 소개
+
+하이하이
+```
+
+2. config.js - nav 을 다음과 같이 수정합니다.
+
+```javascript
+nav: [
+    { text: 'Home', link: '/' },
+    { text: 'About Me', link: '/about/' }
+],
+```
+
+3. 결과를 확인합니다.
+<img src="http://localhost:8080/TIL/vuepress-05.jpg" style="border: solid 1px #e0e0e0;">
+
+이상입니다.
+
+## 진행 상황 정리
+
+현재 sidebar가 중첩그룹으로 이루어져있으며, About Me 까지 생성해 두었습니다.   
+다음은 폴더 구조와 config.js 소스입니다.
+
+<img src="http://localhost:8080/TIL/vuepress-06.jpg" style="border: solid 1px #e0e0e0;">
+
+<br/> config.js는 만드신 구조에 따라 다를 수 있으니 참고만 해주세요!
+```javascript
+module.exports = {
+	title: 'TIL', 
+	description: 'Today I Learned', 
+	base: '/TIL/',
+	themeConfig: {
+		nav: [
+			{ text: 'Home', link: '/' },
+			{ text: 'About Me', link: '/about/' }
+		],
+		sidebar: [
+			{
+				title: '일기',
+				children: [
+					'Diary/20210805',
+					'Diary/20210806',
+					{
+						title: '메모',
+						children: ['Diary/Memo/20210805', 'Diary/Memo/20210806']
+					},
+					{
+						title: '공부',
+						children: ['Diary/Study/20210805', 'Diary/Study/20210806']
+					}
+				]
+			}
+		]
+	}
+};
+```
+
+## 다음 글 예고
+현재까지의 구조에서는 폴더 혹은 파일을 추가하거나, 폴더 구조를 변경할 때마다 일일이 sidebar를 수정해야 합니다.   
+
+저는 그런 귀찮은 일은 절대 용납 못하기 때문에, docs 내 폴더 구조를 읽어 sidebar를 자동화 하는 방법을 알려드리겠습니다.   
+
+읽어주셔서 감사합니다!
