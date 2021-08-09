@@ -1,3 +1,6 @@
+# VuePress Build
+docs/.vuepress/dist
+
 # Logs
 logs
 *.log
