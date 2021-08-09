@@ -9,7 +9,7 @@ module.exports = {
 		logo: '/logo.png', // 로고 이미지
 		nav: [
 			{ text: 'GitHub', link: 'https://github.com/tmdals9974/' },
-			{ text: 'About Me', link: '/about/' }
+			{ text: 'About', link: '/about/' }
 		],
 		smoothScroll: true,
 		lastUpdated: true,
