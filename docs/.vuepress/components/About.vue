@@ -28,7 +28,7 @@
 			<div class="context">
 				<table>
 					<tbody>
-                        <tr>
+						<tr>
 							<td class="th"><strong>Phone</strong></td>
 							<td>
 								<a href="tel:010-2238-9974">010-2238-9974</a>
@@ -67,12 +67,45 @@
 			</div>
 		</article>
 
-		<article>
+		<article class="content">
 			<h2 class="brd-left-title">Experiences</h2>
-			
-			인피니텀
-			재직기간 2021.02.15 ~
-			서비스개발팀 주임
+
+			<div class="context">
+				<h3>인피니텀(주)</h3>
+				<span class="ml-1"> 2021.02.15 ~ </span>
+
+				<div class="project-container">
+					<div class="project">
+						<div class="title">픽셀로 프로젝트</div>
+						<div class="sub-title">픽셀로 관리자 페이지 개발</div>
+						<div class="period">2021.02 ~ 2021.05</div>
+						<div class="skils">
+							<div class="skill-tag">javascript</div>
+							<div class="skill-tag">node.js</div>
+							<div class="skill-tag">react</div>
+							<div class="skill-tag">graphQL</div>
+							<div class="skill-tag">prisma</div>
+							<div class="skill-tag">apollo</div>
+							<div class="skill-tag">express</div>
+							<div class="skill-tag">mariaDB</div>
+						</div>
+					</div>
+
+					<div class="project">
+						<div class="title">보훈자격조회 시스템</div>
+						<div class="sub-title">보훈공단의 보훈자격조회 시스템 개발</div>
+						<div class="period">2021.05 ~ 2021.07</div>
+						<div class="skils">
+							<div class="skill-tag">c#</div>
+							<div class="skill-tag">WPF</div>
+							<div class="skill-tag">xaml</div>
+							<div class="skill-tag">java</div>
+							<div class="skill-tag">egovframework</div>
+							<div class="skill-tag">oracle</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</article>
 	</div>
 </template>
@@ -103,13 +136,13 @@ export default {};
 }
 
 .context {
-    padding: 18px 0;
+	padding: 18px 0;
 	margin-left: 24px;
 }
 
 .context h3 {
 	display: inline-block;
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 .context ul {
@@ -118,7 +151,11 @@ export default {};
 }
 
 .mt-2 {
-    margin-top : 2rem;
+	margin-top: 2rem;
+}
+
+.ml-1 {
+	margin-left: 1rem;
 }
 
 table {
@@ -146,8 +183,34 @@ td {
 }
 
 td.th {
-    text-align: right;
+	text-align: right;
 	border-right: 1px solid #e0e0e0;
 }
 
+.project-container {
+	margin-left: 24px;
+}
+
+.project {
+	margin: 30px 0;
+}
+
+.project > * {
+	margin: 5px 0;
+}
+
+.project > .title {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.skill-tag {
+	background: #4c9ccc;
+	display: inline-block;
+	color: white;
+	padding: 0px 8px;
+	border-radius: 8px;
+	height: 25px;
+	line-height: 25px;
+}
 </style>
