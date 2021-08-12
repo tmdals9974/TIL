@@ -71,37 +71,41 @@
 			<h2 class="brd-left-title">Experiences</h2>
 
 			<div class="context">
-				<h3>인피니텀(주)</h3>
+				<h3 class="sub-title">인피니텀(주)</h3>
 				<span class="ml-1"> 2021.02.15 ~ </span>
 
 				<div class="project-container">
 					<div class="project">
 						<div class="title">픽셀로 프로젝트</div>
-						<div class="sub-title">픽셀로 관리자 페이지 개발</div>
-						<div class="period">2021.02 ~ 2021.05</div>
-						<div class="skils">
-							<div class="skill-tag">javascript</div>
-							<div class="skill-tag">node.js</div>
-							<div class="skill-tag">react</div>
-							<div class="skill-tag">graphQL</div>
-							<div class="skill-tag">prisma</div>
-							<div class="skill-tag">apollo</div>
-							<div class="skill-tag">express</div>
-							<div class="skill-tag">mariaDB</div>
+						<div class="item">
+							<div class="sub-title">픽셀로 관리자 페이지 개발</div>
+							<div class="period">2021.02 ~ 2021.05</div>
+							<div class="skils">
+								<div class="skill-tag">javascript</div>
+								<div class="skill-tag">node.js</div>
+								<div class="skill-tag">react</div>
+								<div class="skill-tag">graphQL</div>
+								<div class="skill-tag">apollo</div>
+								<div class="skill-tag">express</div>
+								<div class="skill-tag">prisma</div>
+								<div class="skill-tag">mariaDB</div>
+							</div>
 						</div>
 					</div>
 
 					<div class="project">
 						<div class="title">보훈자격조회 시스템</div>
-						<div class="sub-title">보훈공단의 보훈자격조회 시스템 개발</div>
-						<div class="period">2021.05 ~ 2021.07</div>
-						<div class="skils">
-							<div class="skill-tag">c#</div>
-							<div class="skill-tag">WPF</div>
-							<div class="skill-tag">xaml</div>
-							<div class="skill-tag">java</div>
-							<div class="skill-tag">egovframework</div>
-							<div class="skill-tag">oracle</div>
+						<div class="item">
+							<div class="sub-title">보훈공단의 보훈자격조회 시스템 개발</div>
+							<div class="period">2021.05 ~ 2021.07</div>
+							<div class="skils">
+								<div class="skill-tag">c#</div>
+								<div class="skill-tag">WPF</div>
+								<div class="skill-tag">xaml</div>
+								<div class="skill-tag">java</div>
+								<div class="skill-tag">egovframework</div>
+								<div class="skill-tag">oracle</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -138,6 +142,10 @@ export default {};
 .context {
 	padding: 18px 0;
 	margin-left: 24px;
+}
+
+.context > .sub-title {
+	font-family: 'Cafe24Ssurround';
 }
 
 .context h3 {
@@ -195,13 +203,18 @@ td.th {
 	margin: 30px 0;
 }
 
-.project > * {
-	margin: 5px 0;
-}
-
 .project > .title {
 	font-size: 1.25rem;
 	font-weight: bold;
+}
+
+.project > .item > * {
+	margin : 8px 0;
+}
+
+.project > .item > *::before {
+	margin: 10px;
+	content: '-';
 }
 
 .skill-tag {
