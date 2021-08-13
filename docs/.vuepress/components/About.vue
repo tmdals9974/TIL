@@ -208,12 +208,16 @@ td.th {
 	font-weight: bold;
 }
 
-.project > .item > * {
-	margin : 8px 0;
+.project > .item {
+	margin-top: 20px;
+}
+
+.project > .item > *:not(.skils) {
+	margin-top : 8px;
 }
 
 .project > .item > *::before {
-	margin: 10px;
+	margin: 0 10px;
 	content: '-';
 }
 
@@ -222,6 +226,7 @@ td.th {
 	display: inline-block;
 	color: white;
 	padding: 0px 8px;
+	margin-top: 8px;
 	border-radius: 8px;
 	height: 25px;
 	line-height: 25px;
