@@ -19,13 +19,14 @@ const treeToSidebar = function(tree) {
 };
 
 const getChildren = function(directory) {
-    dir = directory.children;
+    const dir = directory.children;
 	const children = [];
 
     dir.forEach(item => {
         if (item.type === 'directory') {
             const items = getChildren(item);
-            children.push(new sidebarItem(item.name, items));
+			const dirName = convertDirName(item.name);
+            children.push(new sidebarItem(dirName, items));
         } else if (item.type === 'file' && item.extension === ext) {
             children.push(item.path.toString().replace(docs, '').replace(ext, '').replace(/\\/gi, "/"));
         }
@@ -33,6 +34,16 @@ const getChildren = function(directory) {
 
     return children;
 };
+
+const convertDirName = function(dirName) {
+	const index = dirName.indexOf('.');
+	if (index === -1) return dirName;
+
+	if (parseInt(dirName.substring(0, index)))
+		return dirName.substring(index + 1, dirName.length);
+
+	return dirName;
+}
 
 const sidebarItem = function(title, children = []) {
 	return {
