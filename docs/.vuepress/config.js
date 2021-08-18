@@ -14,5 +14,6 @@ module.exports = {
 		smoothScroll: true,
 		lastUpdated: true,
 		sidebar
-	}
+	},
+	plugins: ['@vuepress/back-to-top']
 };
