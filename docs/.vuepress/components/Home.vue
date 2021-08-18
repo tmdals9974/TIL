@@ -3,7 +3,7 @@
 		<div class="titleContainer">
 			<h1>
 				<div class="logo">
-					<img src="http://localhost:8080/TIL/logo.png" />
+					<img src="http://tmdals9974.github.io/TIL/logo.png" />
 				</div>
 				기록하는 <br />
 				습관
