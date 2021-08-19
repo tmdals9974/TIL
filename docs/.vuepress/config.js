@@ -24,5 +24,13 @@ module.exports = {
 		lastUpdated: true,
 		sidebar
 	},
-	plugins: ['@vuepress/back-to-top']
+	plugins: [
+		'@vuepress/back-to-top',
+		[
+			'@vuepress/google-analytics',
+			{
+				ga: 'G-1V2CF4MMB5'
+			}
+		]
+	]
 };
