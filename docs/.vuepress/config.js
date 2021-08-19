@@ -7,8 +7,11 @@ module.exports = {
 	head: [
 		['link', { rel: 'icon', href: '/logo.ico' }],
 		[
-			'google-site-verification',
-			{ content: 'GbGQneKOnByqTIUEpu8LVOYCCxpI0z364sCucHicItw' }
+			'meta',
+			{
+				name: 'google-site-verification',
+				content: 'GbGQneKOnByqTIUEpu8LVOYCCxpI0z364sCucHicItw'
+			}
 		]
 	],
 	themeConfig: {
