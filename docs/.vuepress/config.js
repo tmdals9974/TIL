@@ -4,7 +4,13 @@ module.exports = {
 	title: 'TIL_SM',
 	description: 'Today SeungMin Learned',
 	base: '/TIL/',
-	head: [['link', { rel: 'icon', href: '/logo.ico' }]],
+	head: [
+		['link', { rel: 'icon', href: '/logo.ico' }],
+		[
+			'google-site-verification',
+			{ content: 'GbGQneKOnByqTIUEpu8LVOYCCxpI0z364sCucHicItw' }
+		]
+	],
 	themeConfig: {
 		logo: '/logo.png', // 로고 이미지
 		nav: [
