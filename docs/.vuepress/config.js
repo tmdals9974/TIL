@@ -12,6 +12,20 @@ module.exports = {
 				name: 'google-site-verification',
 				content: 'GbGQneKOnByqTIUEpu8LVOYCCxpI0z364sCucHicItw'
 			}
+		],
+		[
+			'script',
+			{
+				async: true,
+				src: 'https://www.googletagmanager.com/gtag/js?id=G-1V2CF4MMB5'
+			}
+		],
+		[
+			'script',
+			{},
+			[
+				"window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-1V2CF4MMB5');"
+			]
 		]
 	],
 	themeConfig: {
@@ -24,13 +38,5 @@ module.exports = {
 		lastUpdated: true,
 		sidebar
 	},
-	plugins: [
-		'@vuepress/back-to-top',
-		[
-			'@vuepress/google-analytics',
-			{
-				ga: 'G-1V2CF4MMB5'
-			}
-		]
-	]
+	plugins: ['@vuepress/back-to-top']
 };
