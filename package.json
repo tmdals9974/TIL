@@ -22,9 +22,9 @@
   "homepage": "https://github.com/tmdals9974/TIL#readme",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.8.2",
-    "@vuepress/plugin-google-analytics": "^1.8.2",
     "gh-pages": "^3.2.3",
-    "vuepress": "^1.8.2"
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-sitemap": "^2.3.1"
   },
   "dependencies": {
     "directory-tree": "^2.2.9"

@@ -38,5 +38,8 @@ module.exports = {
 		lastUpdated: true,
 		sidebar
 	},
-	plugins: ['@vuepress/back-to-top']
+	plugins: [
+		'@vuepress/back-to-top',
+		['sitemap', { hostname: 'https://tmdals9974.github.io/TIL/' }]
+	]
 };
