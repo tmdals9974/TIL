@@ -67,7 +67,7 @@
 			</div>
 		</article>
 
-		<article class="content">
+		<article class="content experiences">
 			<h2 class="brd-left-title">Experiences</h2>
 
 			<div class="context">
@@ -80,6 +80,7 @@
 						<div class="item">
 							<div class="sub-title">픽셀로 관리자 페이지 개발</div>
 							<div class="period">2021.02 ~ 2021.05</div>
+							<div class="position">백엔드 개발, 프론트엔드 개발, 배포, 운영</div>
 							<div class="skils">
 								<div class="skill-tag">javascript</div>
 								<div class="skill-tag">node.js</div>
@@ -89,6 +90,10 @@
 								<div class="skill-tag">express</div>
 								<div class="skill-tag">prisma</div>
 								<div class="skill-tag">mariaDB</div>
+								<div class="skill-tag">aws ec2</div>
+								<div class="skill-tag">linux</div>
+								<div class="skill-tag">nginx</div>
+								<div class="skill-tag">pm2</div>
 							</div>
 						</div>
 					</div>
@@ -96,15 +101,83 @@
 					<div class="project">
 						<div class="title">보훈자격조회 시스템</div>
 						<div class="item">
-							<div class="sub-title">보훈공단의 보훈자격조회 시스템 개발</div>
+							<div class="sub-title">보훈자격조회 시스템 개발</div>
 							<div class="period">2021.05 ~ 2021.07</div>
+							<div class="position">백엔드 개발, 프론트엔드 개발, 배포, 운영</div>
 							<div class="skils">
 								<div class="skill-tag">c#</div>
-								<div class="skill-tag">WPF</div>
+								<div class="skill-tag">wpf</div>
 								<div class="skill-tag">xaml</div>
 								<div class="skill-tag">java</div>
 								<div class="skill-tag">egovframework</div>
+								<div class="skill-tag">jsp</div>
 								<div class="skill-tag">oracle</div>
+								<div class="skill-tag">weblogic</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="context">
+				<h3 class="sub-title">토이 프로젝트</h3>
+
+				<div class="project-container">
+					<div class="project">
+						<div class="title">Play Us</div>
+						<div class="item">
+							<div class="sub-title">비전문가도 GUI를 이용해 손쉽게 API 개발할 수 있는 페이지</div>
+							<div class="period">2020.10 ~ 2020.12 <span class="noti font-red">* 취업으로 인해 개발 중단</span></div>
+							<div class="position">백엔드 개발, 프론트엔드 개발</div>
+							<div class="skils">
+								<div class="skill-tag">javascript</div>
+								<div class="skill-tag">node.js</div>
+								<div class="skill-tag">vue</div>
+								<div class="skill-tag">express</div>
+								<div class="skill-tag">mongoDB</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="project">
+						<div class="title">Infinitum</div>
+						<div class="item">
+							<div class="sub-title">사내 사용 페이지 개발</div>
+							<div class="period">2021.07 ~ 2021.08</div>
+							<div class="position">백엔드 개발, 프론트엔드 개발, 배포, 운영</div>
+							<div class="skils">
+								<div class="skill-tag">javascript</div>
+								<div class="skill-tag">node.js</div>
+								<div class="skill-tag">vue</div>
+								<div class="skill-tag">scss</div>
+								<div class="skill-tag">express</div>
+								<div class="skill-tag">mariaDB</div>
+								<div class="skill-tag">aws ec2</div>
+								<div class="skill-tag">ubuntu</div>
+								<div class="skill-tag">nginx</div>
+								<div class="skill-tag">pm2</div>
+								<div class="skill-tag">aws rdb</div>
+								<div class="skill-tag">github actions</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="project">
+						<div class="title">TIL</div>
+						<div class="item">
+							<div class="sub-title">개발 공부 기록용 페이지</div>
+							<div class="period">2021.08 ~ 2021.08</div>
+							<div class="position">프론트엔드 개발, 배포</div>
+							<div class="skils">
+								<div class="skill-tag">javascript</div>
+								<div class="skill-tag">node.js</div>
+								<div class="skill-tag">vue</div>
+								<div class="skill-tag">vuepress</div>
+								<div class="skill-tag">github pages</div>
+								<div class="skill-tag">github actions</div>
+								<div class="skill-tag">google analytics</div>
+								<div class="skill-tag">google search console</div>
 							</div>
 						</div>
 					</div>
@@ -142,6 +215,11 @@ export default {};
 .context {
 	padding: 18px 0;
 	margin-left: 24px;
+}
+
+.experiences .context {
+	padding: 32px 0;
+	border-top: 2px solid #e0e0e0;
 }
 
 .context > .sub-title {
@@ -200,7 +278,7 @@ td.th {
 }
 
 .project {
-	margin: 30px 0;
+	margin: 40px 0 auto;
 }
 
 .project > .title {
@@ -230,5 +308,54 @@ td.th {
 	border-radius: 8px;
 	height: 25px;
 	line-height: 25px;
+}
+
+.noti {
+	margin-left: 10px;
+	font-size: 0.8rem;
+}
+
+.font-red {
+	color: #FE6862;
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr { border: solid #e0e0e0; }
+	tr { border-width: 0 1px 1px 1px; }
+	tr:first-child { border: 1px solid #e0e0e0; }
+	
+	td { 
+		border: none;
+		position: relative;
+		word-break: break-word;
+	}
+	
+	td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+
+	td.th {
+		text-align: start;
+		border:none;
+		background: #F7F9F9;
+	}
 }
 </style>
