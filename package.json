@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/tmdals9974/TIL/issues"
   },
-  "homepage": "https://github.com/tmdals9974/TIL#readme",
+  "homepage": "https://tmdals9974.github.io/TIL/",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "gh-pages": "^3.2.3",
