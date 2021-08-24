@@ -17,7 +17,7 @@ export default {
 			message: "메시지",
 		};
 	},
-	created() {
+	mounted() {
 		navigator.serviceWorker
 			.register("../sw.js")
 			.then(function (registration) {
