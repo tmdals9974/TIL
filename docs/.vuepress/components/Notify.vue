@@ -17,17 +17,30 @@ export default {
 			message: "메시지",
 		};
 	},
+	created() {
+		navigator.serviceWorker
+			.register("../sw.js")
+			.then(function (registration) {
+				console.log("Service worker successfully registered.");
+				return registration;
+			})
+			.catch(function (err) {
+				console.error("Unable to register service worker.", err);
+			});
+	},
 	methods: {
 		notify() {
 			if (this.getNotificationPermission()) {
-				var noti = new Notification(this.title, {
-					body: this.message,
-					icon: logo
+				const m_title = this.title;
+				const m_body = this.message;
+				navigator.serviceWorker.ready.then(function (registration) {
+					registration.showNotification(m_title, {
+						body: m_body,
+						icon: logo,
+						data: { url: "http://tmdals9974.github.io/TIL/Test/notify.html" },
+						actions: [{ action: "open_url", title: "Read Now" }],
+					});
 				});
-				noti.onclick = (event) => {
-					event.preventDefault();
-					window.open("http://tmdals9974.github.io/TIL/Test/notify.html", "_blank");
-				};
 			}
 		},
 		getNotificationPermission() {
@@ -48,7 +61,7 @@ export default {
 			});
 
 			return true;
-		},
+		}
 	},
 };
 </script>
