@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import logo from "../public/logo.png";
+
 export default {
 	data() {
 		return {
@@ -20,6 +22,7 @@ export default {
 			if (this.getNotificationPermission()) {
 				var noti = new Notification(this.title, {
 					body: this.message,
+					icon: logo
 				});
 				noti.onclick = (event) => {
 					event.preventDefault();
