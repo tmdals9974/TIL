@@ -38,7 +38,7 @@ module.exports = {
 			{ text: 'About', link: '/about/' }
 		],
 		smoothScroll: true,
-		lastUpdated: true,
+		// lastUpdated: true,
 		sidebar
 	},
 	plugins: [
