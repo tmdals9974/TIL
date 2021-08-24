@@ -17,13 +17,15 @@ export default {
 	},
 	methods: {
 		notify() {
-			var noti = new Notification(this.title, {
-				body: this.message,
-			});
-			noti.onclick = (event) => {
-				event.preventDefault();
-				window.open("http://tmdals9974.github.io/TIL/Test/notify.html", "_blank");
-			};
+			if (getNotificationPermission()) {
+				var noti = new Notification(this.title, {
+					body: this.message,
+				});
+				noti.onclick = (event) => {
+					event.preventDefault();
+					window.open("http://tmdals9974.github.io/TIL/Test/notify.html", "_blank");
+				};
+			}
 		},
 		getNotificationPermission() {
 			console.log("getNotificationPermission");
