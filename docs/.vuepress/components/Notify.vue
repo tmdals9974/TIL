@@ -17,7 +17,7 @@ export default {
 	},
 	methods: {
 		notify() {
-			if (getNotificationPermission()) {
+			if (this.getNotificationPermission()) {
 				var noti = new Notification(this.title, {
 					body: this.message,
 				});
