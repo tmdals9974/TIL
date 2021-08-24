@@ -4,6 +4,9 @@ module.exports = {
 	title: 'TIL_SM',
 	description: 'Today SeungMin Learned',
 	base: '/TIL/',
+	locales: {
+		'/': { lang: 'ko-KR' }
+	},
 	head: [
 		['link', { rel: 'icon', href: '/logo.ico' }],
 		[
@@ -40,6 +43,6 @@ module.exports = {
 	},
 	plugins: [
 		'@vuepress/back-to-top',
-		['sitemap', { hostname: 'https://tmdals9974.github.io/TIL/' }]
+		// ['sitemap', { hostname: 'https://tmdals9974.github.io/TIL/' }]
 	]
 };
