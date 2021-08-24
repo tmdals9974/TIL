@@ -8,8 +8,6 @@
 </template>
 
 <script>
-import logo from "../public/logo.png";
-
 export default {
 	data() {
 		return {
@@ -17,62 +15,25 @@ export default {
 			message: "메시지",
 		};
 	},
-	// created() {
-	// 	navigator.serviceWorker
-	// 		.register("../sw.js")
-	// 		.then(function (registration) {
-	// 			console.log("Service worker successfully registered.");
-	// 			return registration;
-	// 		})
-	// 		.catch(function (err) {
-	// 			console.error("Unable to register service worker.", err);
-	// 		});
-	// },
 	methods: {
 		notify() {
 			var noti = new Notification(this.title, {
 				body: this.message,
-				icon: logo,
-				// actions: [
-				// 	{
-				// 		action: "move",
-				// 		title: "바로 보러 가기",
-				// 		icon: "/TIL/logo.png",
-				// 	},
-				// ],
 			});
 			noti.onclick = (event) => {
-				event.preventDefault(); // prevent the browser from focusing the Notification's tab
-				window.open("http://localhost:8080/TIL/Test/notify.html", "_blank");
+				event.preventDefault();
+				window.open("http://tmdals9974.github.io/TIL/Test/notify.html", "_blank");
 			};
 		},
-		// notify() {
-		// 	if (this.getNotificationPermission())
-		// 		navigator.serviceWorker.ready.then(function (registration) {
-		// 			registration.showNotification('타이틀', {
-		// 				body: '메시지',
-		// 				icon: logo,
-		// 				actions: [
-		// 					{
-		// 						action: "goTab",
-		// 						title: "화면활성화",
-		// 						icon: "/TIL/logo.png",
-		// 					},
-		// 					{
-		// 						action: "move",
-		// 						title: "바로 보러 가기",
-		// 						icon: "/TIL/logo.png",
-		// 					},
-		// 				],
-		// 			});
-		// 		});
-		// },
 		getNotificationPermission() {
+			console.log("getNotificationPermission");
+
 			if (!"Notification" in window) {
 				alert("데스크톱 알림을 지원하지 않는 브라우저입니다.");
 			}
 
 			Notification.requestPermission((result) => {
+				console.log("requestPermission result: " + result);
 				if (result === "denied") {
 					alert(
 						"알림을 차단하셨습니다.\n브라우저의 사이트 설정에서 변경하실 수 있습니다."
@@ -83,12 +44,6 @@ export default {
 
 			return true;
 		},
-		// showNotify() {
-		// 	const notification = new Notification();
-		// 	setTimeout(() => {
-		// 		notification.close();
-		// 	}, 3000);
-		// },
 	},
 };
 </script>
