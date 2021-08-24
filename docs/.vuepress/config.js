@@ -43,6 +43,6 @@ module.exports = {
 	},
 	plugins: [
 		'@vuepress/back-to-top',
-		// ['sitemap', { hostname: 'https://tmdals9974.github.io/TIL/' }]
+		['sitemap', { hostname: 'https://tmdals9974.github.io/TIL/' }]
 	]
 };
