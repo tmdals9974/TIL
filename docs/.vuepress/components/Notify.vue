@@ -1,9 +1,12 @@
 <template>
 	<div>
 		<h1>Notify Test</h1>
-		<input type="text" name="" id="notiTitle" v-model="title" />
-		<input type="text" name="" id="notiMessage" v-model="message" />
-		<button @click="notify()">notify</button>
+		<div class="flex-column">
+			<input type="text" name="" id="notiTitle" v-model="title" />
+			<input type="text" name="" id="notiMessage" v-model="message" />
+			<input type="button" @click="notify()" value="1. 즉시 알림" />
+			<input type="button" @click="afterNotify()" value="2. 10초 후 알림" />
+		</div>
 	</div>
 </template>
 
@@ -29,6 +32,9 @@ export default {
 			});
 	},
 	methods: {
+		afterNotify() {
+			setTimeout(() => this.notify(), 10000);
+		},
 		notify() {
 			if (this.getNotificationPermission()) {
 				const m_title = this.title;
@@ -61,7 +67,40 @@ export default {
 			});
 
 			return true;
-		}
+		},
 	},
 };
 </script>
+
+<style scoped>
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-column > * {
+	margin: 0 auto;
+	margin-bottom: 15px;
+	padding: 7px;
+	font-family: "Cafe24SsurroundAir";
+}
+
+.flex-column > input[type="text"] {
+	width: 50%;
+}
+
+.flex-column > input[type="button"] {
+	min-width: fit-content;
+	padding: 10px;
+	width: 20%;
+	font-weight: bold;
+	font-size: 1.05rem;
+	color: white;
+	background-color: #4c9ccc;
+	border: none;
+	border-radius: 7px;
+	cursor: pointer;
+}
+</style>
