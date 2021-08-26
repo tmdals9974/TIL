@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<h1>Exif Test</h1>
-		<!-- <img id="catImg" src="tmdals9974.github.io/TIL/cat.jpg" class="img-border" alt="은하"> -->
-		<img id="catImg" src="/cat.jpg" class="img-border" alt="은하" />
+		<img id="catImg" src="tmdals9974.github.io/TIL/cat.jpg" class="img-border" alt="은하">
+		<!-- <img id="catImg" src="/cat.jpg" class="img-border" alt="은하" /> -->
 		<h4 id="exifContent"></h4>
 	</div>
 </template>
