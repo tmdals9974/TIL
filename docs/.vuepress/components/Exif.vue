@@ -37,7 +37,7 @@ export default {
 			}
 		}
 	},
-	created() {
+	beforeMount() {
 		let recaptchaScript = document.createElement("script");
 		recaptchaScript.setAttribute("src", "https://cdn.jsdelivr.net/npm/exif-js");
 		document.head.appendChild(recaptchaScript);
