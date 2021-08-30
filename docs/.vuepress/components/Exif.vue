@@ -5,8 +5,12 @@
 		<h2>이미지 메타데이터 조회</h2>
 
 		<h3>이미지를 업로드하시면 해당 이미지의 메타데이터가 출력됩니다.</h3>
+		<h5>* 업로드한 이미지는 저장하지 않습니다.</h5>
+
 		<input type="file" id="imgUpload" @change="getEXIF()" accept="image/*" />
 		
+		<img id="img" src="" alt="">
+
 		<h4 id="imageDescription"></h4>
 		<h4 id="exifContent"></h4>
 	</div>
@@ -25,8 +29,12 @@ export default {
 				var img = document.getElementById("imgUpload").files[0];
 				window.exifr.parse(img).then(exif => {
 					document.getElementById("imageDescription").innerText = '설명 : ' + exif.ImageDescription;
-					document.getElementById("exifContent").innerText = JSON.stringify(exif);
+					document.getElementById("exifContent").innerText = JSON.stringify(exif, null, "\t");
 				});
+				window.exifr.thumbnailUrl(img).then(url => {
+					document.getElementById("img").src = url;
+				})
+				
 			`;
 			document.head.appendChild(script);
 		},
