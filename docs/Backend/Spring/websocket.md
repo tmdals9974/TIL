@@ -183,27 +183,48 @@ public String getServer(HttpServletRequest request, HttpServletResponse response
 <title>client</title>
 </head>
 <body>
-	hello Client
-	<div id="msgStack"></div>
+	hello Client!<br/>
+	<b>접속 상태 : </b><span id="socketStatus">연결 중</span><br/>
+	<b>전송 받은 메시지 : </b><span id="msg"></span><br >
+	<b>최근 전송 받은 시간 : </b><span id="msgTime"></span>
 	
 	<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	
 	<script>
-	// 전역변수 설정
 	var socket = null;
-	$(document).ready(function(){
-	    // 웹소켓 연결
+	document.addEventListener("DOMContentLoaded", function(){
 	    var sock = new SockJS('/echo-ws');
 	    socket = sock;
 	
-	    // 데이터를 전달 받았을때 
+	    sock.onopen = onOpen;
 	    sock.onmessage = onMessage;
+	    sock.onclose = onClose;
 	});
 	
 	function onMessage(evt){
-	    document.getElementById("msgStack").innerHTML= evt.data;
+	    document.getElementById("msg").innerHTML = evt.data;
+	    document.getElementById("msgTime").innerHTML = getNowString();
 	};
+	
+	function onOpen() {
+		document.getElementById("socketStatus").innerHTML = "접속 중";
+	}
+	
+	function onClose() {
+		document.getElementById("socketStatus").innerHTML = "접속 종료";
+	}
+	
+	function getNowString() {
+		var today = new Date();   
+		var year = today.getFullYear(); 
+		var month = today.getMonth() + 1;
+		var date = today.getDate();
+		var hours = today.getHours(); 
+		var minutes = today.getMinutes(); 
+		var seconds = today.getSeconds();
+		
+		return year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
+	}
 	</script>
 </body>
 </html>
@@ -213,8 +234,7 @@ public String getServer(HttpServletRequest request, HttpServletResponse response
 해당 페이지는 메시지를 전달할 관리자용 페이지입니다.   
 
 ```html
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -222,7 +242,8 @@ public String getServer(HttpServletRequest request, HttpServletResponse response
 <title>admin</title>
 </head>
 <body>
-	hello Admin
+	hello Admin <br/>
+	<b>접속 상태 : </b><span id="socketStatus">연결 중</span><br/>
 	<input type="text" id="sendMessage"/>
 	<button onclick="send()">send</button>
 	
@@ -234,12 +255,23 @@ public String getServer(HttpServletRequest request, HttpServletResponse response
 	    // 웹소켓 연결
 	    var sock = new SockJS("/echo-ws");
 	    socket = sock;
+
+		sock.onopen = onOpen;
+	    sock.onclose = onClose;
 	});
 
     function send(){ 
     	var msg = document.getElementById("sendMessage").value;
         socket.send(msg);
     }
+
+	function onOpen() {
+		document.getElementById("socketStatus").innerHTML = "접속 중";
+	}
+	
+	function onClose() {
+		document.getElementById("socketStatus").innerHTML = "접속 종료";
+	}
 	</script>
 </body>
 </html>
