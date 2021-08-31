@@ -161,12 +161,12 @@ public class ConsoleLogging {
 
 ```java
 @GetMapping(value = "/client")
-public String returnClientPage(HttpServletRequest request, HttpServletResponse response) {
+public String getClient(HttpServletRequest request, HttpServletResponse response) {
 	return "egovframework/example/socket";
 }
 
 @GetMapping(value = "/server")
-public String returnAdminPage(HttpServletRequest request, HttpServletResponse response) {
+public String getServer(HttpServletRequest request, HttpServletResponse response) {
 	return "egovframework/example/server";
 }
 ```
