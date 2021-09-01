@@ -111,47 +111,44 @@ public class EchoController extends TextWebSocketHandler {
 ```java
 public class ConsoleLogging {
 	
-	public static void DebugLogging(String className, String methodName, String message) {
-		LogSeparator();
-		System.out.println(LogHeader() + className + "/" + methodName + " : " + message);
-		LogSeparator();
-	}
-	
-	public static void ErrorLogging(String message, Exception ex) {
-		LogSeparator();
-		System.out.println(LogHeader() + message + " : " + ex.getMessage());
-		System.out.println("ex.printStackTrace() ==> ");
-		ex.printStackTrace();
-		LogSeparator();
-	}
-	
-	public static String LogHeader() {
-		return "[" + GetToday() + "] ";
-	}
-	
-	public static String GetPath() {
-		return GetClassName() + "/" + GetMethodName();
-	}
-	
-	public static String GetClassName() {
-		return Thread.currentThread().getStackTrace()[2].getClassName();
-	}
+   public static void debugLogging(String className, String methodName, String message) {
+      logSeparator();
+      System.out.println(logHeader() + className + "/" + methodName + " : " + message);
+      logSeparator();
+   }
+   
+   public static void errorLogging(String message, Exception ex) {
+      logSeparator();
+      System.out.println(logHeader() + message + " : " + ex.getMessage());
+      System.out.println("ex.printStackTrace() ==> ");
+      ex.printStackTrace();
+      logSeparator();
+   }
+   
+   public static String logHeader() {
+      return "[" + getToday() + "] ";
+   }
+      
+   public static String getClassName() {
+      return Thread.currentThread().getStackTrace()[2].getClassName();
+   }
 
-	public static String GetMethodName() {
-		return Thread.currentThread().getStackTrace()[2].getMethodName();
-	}
-	
-	public static String GetToday() {
-		java.util.Date today = new java.util.Date();
-		SimpleDateFormat formatTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREAN);
-		return formatTime.format(today);
-	}
-	
-	public static void LogSeparator() {
-		System.out.println("================================================================================");
-		System.out.println("================================================================================");
-		System.out.println("================================================================================");
-	}
+   public static String getMethodName() {
+      return Thread.currentThread().getStackTrace()[2].getMethodName();
+   }
+   
+   public static String getToday() {
+      java.util.Date today = new java.util.Date();
+      SimpleDateFormat formatTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREAN);
+      return formatTime.format(today);
+   }
+   
+   public static void logSeparator() {
+      System.out.println("================================================================================");
+      System.out.println("================================================================================");
+      System.out.println("================================================================================");
+   }
+
 }
 ```
 
