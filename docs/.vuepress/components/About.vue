@@ -79,8 +79,10 @@
 						<div class="title">픽셀로 프로젝트</div>
 						<div class="item">
 							<div class="sub-title">픽셀로 관리자 페이지 개발</div>
-							<div class="period">2021.02 ~ 2021.05</div>
-							<div class="position">백엔드 개발, 프론트엔드 개발, 배포, 운영</div>
+							<div class="period">2021.02.15 ~ 2021.05.14</div>
+							<div class="position">
+								백엔드 개발, 프론트엔드 개발, 배포, 운영
+							</div>
 							<div class="skils">
 								<div class="skill-tag">javascript</div>
 								<div class="skill-tag">node.js</div>
@@ -95,6 +97,10 @@
 								<div class="skill-tag">nginx</div>
 								<div class="skill-tag">pm2</div>
 							</div>
+							<div class="review">
+								react와 graphQL의 조합이 인상적이며, prisma의 압도적인 생산성에
+								감탄하게 된 프로젝트
+							</div>
 						</div>
 					</div>
 
@@ -102,8 +108,10 @@
 						<div class="title">보훈자격조회 시스템</div>
 						<div class="item">
 							<div class="sub-title">보훈자격조회 시스템 개발</div>
-							<div class="period">2021.05 ~ 2021.07</div>
-							<div class="position">백엔드 개발, 프론트엔드 개발, 배포, 운영</div>
+							<div class="period">2021.04.30 ~ 2021.06.30</div>
+							<div class="position">
+								백엔드 개발, 프론트엔드 개발, 배포, 운영
+							</div>
 							<div class="skils">
 								<div class="skill-tag">c#</div>
 								<div class="skill-tag">wpf</div>
@@ -114,10 +122,35 @@
 								<div class="skill-tag">oracle</div>
 								<div class="skill-tag">weblogic</div>
 							</div>
+							<div class="review">
+								윈도우 프로그램의 개발, 배포, 운영 단계에서 색다른 즐거움을 느낀
+								프로젝트
+							</div>
+						</div>
+					</div>
+
+					<div class="project">
+						<div class="title">청*대 e춘*관 시스템</div>
+						<div class="item">
+							<div class="sub-title">청*대 e춘*관 시스템 개발</div>
+							<div class="period">2021.07.23 ~ 2021.10.23</div>
+							<div class="position">
+								개발PM, 백엔드 개발, 프론트엔드 개발, 배포
+							</div>
+							<div class="skils">
+								<div class="skill-tag">java</div>
+								<div class="skill-tag">egovframework</div>
+								<div class="skill-tag">jsp</div>
+								<div class="skill-tag">cubrid</div>
+								<div class="skill-tag">apache</div>
+								<div class="skill-tag">tomcat</div>
+							</div>
+							<div class="review">
+								폐쇄적인 환경에서 개발, 배포 작업이 어려움을 느낄 수 있었으며, 웹소켓과 Notification Web API를 이용한 실시간 OS 알림이 재밌던 프로젝트.
+							</div>
 						</div>
 					</div>
 				</div>
-				
 			</div>
 
 			<div class="context">
@@ -127,8 +160,13 @@
 					<div class="project">
 						<div class="title">Play Us</div>
 						<div class="item">
-							<div class="sub-title">비전문가도 GUI를 이용해 손쉽게 API 개발할 수 있는 페이지</div>
-							<div class="period">2020.10 ~ 2020.12 <span class="noti font-red">* 취업으로 인해 개발 중단</span></div>
+							<div class="sub-title">
+								비전문가도 GUI를 이용해 손쉽게 API 개발할 수 있는 페이지
+							</div>
+							<div class="period">
+								2020.10 ~ 2020.12
+								<span class="noti font-red">* 취업으로 인해 개발 중단</span>
+							</div>
 							<div class="position">백엔드 개발, 프론트엔드 개발</div>
 							<div class="skils">
 								<div class="skill-tag">javascript</div>
@@ -145,7 +183,9 @@
 						<div class="item">
 							<div class="sub-title">사내 사용 페이지 개발</div>
 							<div class="period">2021.07 ~ 2021.08</div>
-							<div class="position">백엔드 개발, 프론트엔드 개발, 배포, 운영</div>
+							<div class="position">
+								백엔드 개발, 프론트엔드 개발, 배포, 운영
+							</div>
 							<div class="skils">
 								<div class="skill-tag">javascript</div>
 								<div class="skill-tag">node.js</div>
@@ -167,7 +207,7 @@
 						<div class="title">TIL</div>
 						<div class="item">
 							<div class="sub-title">개발 공부 기록용 페이지</div>
-							<div class="period">2021.08 ~ 2021.08</div>
+							<div class="period">2021.08 ~ </div>
 							<div class="position">프론트엔드 개발, 배포</div>
 							<div class="skils">
 								<div class="skill-tag">javascript</div>
@@ -223,7 +263,7 @@ export default {};
 }
 
 .context > .sub-title {
-	font-family: 'Cafe24Ssurround';
+	font-family: "Cafe24Ssurround";
 }
 
 .context h3 {
@@ -291,12 +331,12 @@ td.th {
 }
 
 .project > .item > *:not(.skils) {
-	margin-top : 8px;
+	margin-top: 8px;
 }
 
 .project > .item > *::before {
 	margin: 0 10px;
-	content: '-';
+	content: "-";
 }
 
 .skill-tag {
@@ -316,46 +356,55 @@ td.th {
 }
 
 .font-red {
-	color: #FE6862;
+	color: #fe6862;
 }
 
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
-
-	table, thead, tbody, th, td, tr { 
-		display: block; 
+@media only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px) {
+	table,
+	thead,
+	tbody,
+	th,
+	td,
+	tr {
+		display: block;
 	}
-	
-	thead tr { 
+
+	thead tr {
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
 	}
 
-	tr { border: solid #e0e0e0; }
-	tr { border-width: 0 1px 1px 1px; }
-	tr:first-child { border: 1px solid #e0e0e0; }
-	
-	td { 
+	tr {
+		border: solid #e0e0e0;
+	}
+	tr {
+		border-width: 0 1px 1px 1px;
+	}
+	tr:first-child {
+		border: 1px solid #e0e0e0;
+	}
+
+	td {
 		border: none;
 		position: relative;
 		word-break: break-word;
 	}
-	
-	td:before { 
+
+	td:before {
 		position: absolute;
 		top: 6px;
 		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
+		width: 45%;
+		padding-right: 10px;
 		white-space: nowrap;
 	}
 
 	td.th {
 		text-align: start;
-		border:none;
-		background: #F7F9F9;
+		border: none;
+		background: #f7f9f9;
 	}
 }
 </style>
