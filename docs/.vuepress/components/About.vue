@@ -110,7 +110,7 @@
 							<div class="sub-title">보훈자격조회 시스템 개발</div>
 							<div class="period">2021.04.30 ~ 2021.06.30</div>
 							<div class="position">
-								백엔드 개발, 프론트엔드 개발, 배포, 운영
+								백엔드 개발, 프론트엔드 개발, 윈도우 어플리케이션 개발, 배포, 운영
 							</div>
 							<div class="skils">
 								<div class="skill-tag">c#</div>
@@ -135,7 +135,7 @@
 							<div class="sub-title">청*대 e춘*관 시스템 개발</div>
 							<div class="period">2021.07.23 ~ 2021.10.23</div>
 							<div class="position">
-								개발PM, 백엔드 개발, 프론트엔드 개발, 배포
+								개발 PM, 백엔드 개발, 프론트엔드 개발, 배포
 							</div>
 							<div class="skils">
 								<div class="skill-tag">java</div>
@@ -147,6 +147,43 @@
 							</div>
 							<div class="review">
 								폐쇄적인 환경에서 개발, 배포 작업이 어려움을 느낄 수 있었으며, 웹소켓과 Notification Web API를 이용한 실시간 OS 알림이 재밌던 프로젝트.
+							</div>
+						</div>
+					</div>
+
+					<div class="project">
+						<div class="title">이음 서비스 개발</div>
+						<div class="item">
+							<div class="sub-title">보훈공단 비대면 요양 서비스 개발</div>
+							<div class="period">2021.10.08 ~ 2021.12.26</div>
+							<div class="position">
+								개발 PM, 백엔드 개발, 프론트엔드 개발
+							</div>
+							<div class="skils">
+								<div class="skill-tag">java</div>
+								<div class="skill-tag">egovframework</div>
+								<div class="skill-tag">jsp</div>
+								<div class="skill-tag">mariaDB</div>
+								<div class="skill-tag">nginx</div>
+								<div class="skill-tag">tomcat</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="project">
+						<div class="title">홈씨씨몰 운영</div>
+						<div class="item">
+							<div class="sub-title">KCC 홈씨씨몰 서비스 운영 유지보수</div>
+							<div class="period">2022.01.01 ~ 2022.12.31</div>
+							<div class="position">
+								백엔드 개발, 프론트엔드 개발
+							</div>
+							<div class="skils">
+								<div class="skill-tag">java</div>
+								<div class="skill-tag">egovframework</div>
+								<div class="skill-tag">jsp</div>
+								<div class="skill-tag">oracle</div>
+								<div class="skill-tag">tomcat</div>
 							</div>
 						</div>
 					</div>
